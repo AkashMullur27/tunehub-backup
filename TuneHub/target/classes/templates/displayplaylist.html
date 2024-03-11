@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Playlists</title>
+</head>
+<body>
+	<table border="1">
+			<thead>
+				<tr>
+					<th>Playlist_Id</th>
+					<th>Playlits_Name</th>
+					<th>Songs_Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="all:${allplaylist}">
+				<td th:text="${all.id}"></td>
+				<td th:text="${all.name}"></td>
+				<td>
+						<li th:each="song:${all.songs}">
+							<span th:text="${song.name}"></span>
+							
+							<br>
+			
+							<audio controls>
+								<source th:src="${song.link}">
+							</audio>
+						</li>	
+				</td>
+				</tr>
+			</tbody>
+	</table>
+
+</body>
+</html>
+
+
+
+
